@@ -107,3 +107,13 @@ function aboutCountry (country) {
 
   console.log(country)
 }
+
+$(".countries__search__wrapper__input").on('keyup', (event) => {
+  $(".countries__cards__card").each(function(){
+    if($(this).find('.countries__cards__card__name').text().toLowerCase().startsWith(event.target.value.toLowerCase())) {
+      $(this).css('display', 'flex')
+    } else {
+      $(this).css('display', 'none')
+    }
+  })
+})
