@@ -150,8 +150,9 @@ body {
     margin-left: 30px; }
     .country__flag img {
       width: 100%; }
-  .country__data {
+  .country__info {
     display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    padding-top: 80px; }
+    flex-direction: column; }
+    .country__info__data {
+      display: flex;
+      padding-top: 80px; }

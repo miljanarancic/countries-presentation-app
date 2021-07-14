@@ -11,10 +11,13 @@
     }
   }
 
-  &__data {
+  &__info {
     display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    padding-top: 80px;
+    flex-direction: column;
+
+    &__data {
+      display: flex;
+      padding-top: 80px;
+    }
   }
 }

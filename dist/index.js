@@ -65,9 +65,9 @@ function aboutCountry (country) {
   let countries = $(".countries")
   countries.css("display", "none")
   let countryFlag = $(".country__flag")
-  let countryData = $(".country__data")
-  let countryDataLeft = $(".country__data__left")
-  let countryDataRight = $(".country__data__right")
+  let countryData = $(".country__info")
+  let countryDataLeft = $(".country__info__data__left")
+  let countryDataRight = $(".country__info__data__right")
 
   const flag = $('<img />');
   flag.attr('src', country.flag);
@@ -101,9 +101,9 @@ function aboutCountry (country) {
   const languages = $('<p></p>');
   languages.html('<span>Languages: </span>' + country.languages.map(language =>language.name).join(", "));
 
+  countryData.prepend(name)
   countryDataLeft.append(nativeName, population, region, subRegion, capital)
   countryDataRight.append(topLevelDomain, currencies, languages)
-  countryData.append(name)
 
   console.log(country)
 }
