@@ -1,0 +1,81 @@
+//colors
+$blue: hsl(209, 23%, 22%);
+$dark-blue: hsl(207, 26%, 17%);
+$very-dark-blue: hsl(200, 15%, 8%);
+
+$dark-gray: hsl(0, 0%, 52%);
+$light-gray: hsl(0, 0%, 98%);
+
+// primary colors
+
+:root {
+  --primary-background: white;
+  --page-background: hsl(0, 0%, 98%);
+  --font-color: black;
+  --box-shadow-color: rgba(133, 133, 133, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+}
+
+//dark mode
+@mixin dark-mode {
+  body {
+    background-color: $dark-blue;
+  }
+  .header {
+    background-color: $blue;
+    border: 3px solid $very-dark-blue;
+    color: white;
+  }
+}
+
+//responsive
+
+$breakpoint-max-page-width: 1440px;
+$breakpoint-laptop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile-l: 425px;
+$breakpoint-mobile-m: 375px;
+$breakpoint-mobile-s: 320px;
+
+@mixin max-page-width {
+  @media (max-width: $breakpoint-max-page-width) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $breakpoint-laptop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile-l {
+  @media (max-width: $breakpoint-mobile-l) {
+    @content;
+  }
+}
+
+@mixin mobile-m {
+  @media (max-width: $breakpoint-mobile-m) {
+    @content;
+  }
+}
+
+@mixin mobile-s {
+  @media (max-width: $breakpoint-mobile-s) {
+    @content;
+  }
+}

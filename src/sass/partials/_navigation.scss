@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  height: 80px;
+  box-shadow: 0px 0px 6px 0px var(--box-shadow-color);
+  background-color: var(--primary-background);
+  color: var(--font-color);
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 80px;
+
+    @media (max-width: 570px) {
+      padding: 20px;
+    }
+
+    &__heading {
+      font-family: $font-nunito;
+      font-weight: 800;
+      font-size: 24px;
+
+      @media (max-width: 570px) {
+        font-size: 18px;
+      }
+
+      @include mobile-l {
+        font-size: 16px;
+      }
+    }
+  }
+}

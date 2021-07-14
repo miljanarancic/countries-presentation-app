@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Countries presentation app</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="header__navigation">
+            <span class="header__navigation__heading">Where in the world?</span>
+            <div class="header__navigation__mode">
+                <i class="far fa-moon"></i>
+                <span>Dark Mode</span>
+            </div>
+        </nav>
+    </header>
+    <section class="countries">
+        <div class="countries__search">
+            <div class="countries__search__wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for a country..." class="countries__search__wrapper__input">
+            </div>
+            <select name="countries-dropdown" class="countries__search__dropdown">
+                <option value="Africa">Africa</option>
+                <option value="America">America</option>
+                <option value="Europe">Europe</option>
+                <option value="Asia">Asia</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+        <div class="countries__cards">
+
+        </div>
+    </section>
+    <section class="country">
+        <div class="country__flag"></div>
+        <div class="country__info">
+            <div class="country__info__data">
+                <div class="country__data__left"></div>
+                <div class="country__data__right"></div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/a9e6e2d560.js" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
