@@ -18,12 +18,15 @@ moon.on('click', () => {
   }
 })
 
+let countries = []
+
 $.ajax({
   url: 'https://restcountries.eu/rest/v2/all',
   method: 'GET',
   success: function (response) {
     response.forEach(country => {
       createCard(country)
+      countries = response;
     })
   }
 })
@@ -64,7 +67,7 @@ function createCard (country) {
 function aboutCountry (country) {
   $(".countries").addClass("hide")
   $('.country').removeClass('hide')
-
+  $('.country__button').removeClass('hide')
   $('.country__image__flag').attr('src', country.flag);
   $('.country__name').text(country.name);
   $('.country__native-name').html('<span>Native name: </span>' + country.nativeName);
@@ -75,7 +78,18 @@ function aboutCountry (country) {
   $('.country__domain').html('<span>Top Level Domain: </span>' + country.topLevelDomain);
   $('.country__currencies').html('<span>Currencies: </span>' + country.currencies.map(currency => currency.name).join(", "));
   $('.country__languages').html('<span>Languages: </span>' + country.languages.map(language => language.name).join(", "));
-console.log(country)
+ 
+  let borderCountries = $('.country__info__border')
+  borderCountries.html('<span>Border Countries: </span>')
+  country.borders.forEach(border => { 
+    
+    let borderCountry = $('<span></span>');
+    const borderCountryData = countries.find(c => c.alpha3Code === border);
+    borderCountry.text(borderCountryData.name)
+    borderCountry.addClass('country__info__border__country')
+    borderCountries.append(borderCountry)
+    borderCountry.on('click', () => aboutCountry(borderCountryData))
+  })
 }
 
 $(".countries__search__wrapper__input").on('keyup', (event) => {
@@ -101,5 +115,6 @@ $(".countries__search__dropdown").on('change', (event) => {
 $('.country__button').on('click', () => {
   $('.countries').toggleClass('hide')
   $('.country').toggleClass('hide')
+  $('.country__button').addClass('hide')
 })
 
