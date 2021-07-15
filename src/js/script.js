@@ -4,7 +4,7 @@ moon.on('click', () => {
   moon.toggleClass('far')
   moon.toggleClass('fas')
 
-  if(moon.hasClass("far")) {
+  if(moon.hasClass('far')) {
     document.documentElement.style.setProperty("--primary-background", "white")
     document.documentElement.style.setProperty("--page-background", "hsl(0, 0%, 98%)")
     document.documentElement.style.setProperty("--font-color", "black")
@@ -92,8 +92,8 @@ function aboutCountry (country) {
   })
 }
 
-$(".countries__search__wrapper__input").on('keyup', (event) => {
-  $(".countries__cards__card").each(function(){
+$('.countries__search__wrapper__input').on('keyup', (event) => {
+  $('.countries__cards__card').each(function(){
     if($(this).find('.countries__cards__card__name').text().toLowerCase().startsWith(event.target.value.toLowerCase())) {
       $(this).css('display', 'flex')
     } else {
@@ -102,8 +102,8 @@ $(".countries__search__wrapper__input").on('keyup', (event) => {
   })
 })
 
-$(".countries__search__dropdown").on('change', (event) => {
-  $(".countries__cards__card").each(function(){
+$('.countries__search__dropdown').on('change', (event) => {
+  $('.countries__cards__card').each(function(){
     if($(this).find('.countries__cards__card__region').text().includes(event.target.value)) {
       $(this).css('display', 'flex')
     } else {

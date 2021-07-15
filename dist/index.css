@@ -149,6 +149,10 @@ body {
   display: flex;
   background-color: var(--page-background);
   color: var(--font-color); }
+  @media (max-width: 920px) {
+    .country {
+      flex-direction: column;
+      align-items: center; } }
   .country.hide {
     display: none; }
   .country__name {
@@ -165,10 +169,18 @@ body {
     border-radius: 5px; }
     .country__button.hide {
       display: none; }
+    @media (max-width: 768px) {
+      .country__button {
+        margin-left: 10%; } }
   .country__image {
     max-width: 40%;
     padding: 70px 0 0 30px;
     margin-left: 70px; }
+    @media (max-width: 920px) {
+      .country__image {
+        max-width: 80%;
+        margin-left: 0;
+        padding-left: 0; } }
     .country__image__flag {
       width: 100%; }
   .country__info {
@@ -178,19 +190,41 @@ body {
     padding-top: 120px;
     margin-left: 100px;
     margin-right: 80px; }
+    @media (max-width: 1024px) {
+      .country__info {
+        padding-top: 50px; } }
+    @media (max-width: 920px) {
+      .country__info {
+        align-items: center;
+        width: 80%;
+        margin-left: 0;
+        margin-right: 0; } }
+    @media (max-width: 425px) {
+      .country__info {
+        align-items: flex-start; } }
     .country__info__data {
       display: flex;
       justify-content: space-between;
       font-family: "Nunito Sans", sans-serif; }
+      @media (max-width: 425px) {
+        .country__info__data {
+          flex-direction: column; } }
       .country__info__data__left, .country__info__data__right {
         flex: 0 0 50%; }
         .country__info__data__left span, .country__info__data__right span {
           font-weight: 800; }
         .country__info__data__left p, .country__info__data__right p {
           margin: 10px 0; }
+      @media (max-width: 1024px) {
+        .country__info__data__left {
+          margin-right: 20px; } }
     .country__info__border {
       font-family: "Nunito Sans", sans-serif;
       margin-top: 50px; }
+      @media (max-width: 920px) {
+        .country__info__border {
+          margin: 0 auto;
+          margin-top: 50px; } }
       .country__info__border :nth-child(1) {
         font-weight: 800; }
       .country__info__border__country {
