@@ -9,7 +9,8 @@
   box-sizing: border-box; }
 
 body {
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-color: var(--page-background); }
 
 .header {
   display: flex;
@@ -45,6 +46,8 @@ body {
   font-family: "Nunito Sans", sans-serif;
   background-color: var(--page-background);
   color: var(--font-color); }
+  .countries.hide {
+    display: none; }
   @media (max-width: 768px) {
     .countries {
       padding: 40px; } }
@@ -143,12 +146,25 @@ body {
           margin: 0; }
 
 .country {
-  display: flex; }
-  .country__flag {
-    width: 50%;
+  display: flex;
+  background-color: var(--page-background);
+  color: var(--font-color); }
+  .country.hide {
+    display: none; }
+  .country__button {
+    width: 100px;
+    padding: 5px;
+    margin: 30px 0 0 100px;
+    background-color: var(--primary-background);
+    box-shadow: 0px 0px 6px 0px var(--box-shadow-color);
+    border: none;
+    color: var(--font-color);
+    border-radius: 5px; }
+  .country__image {
+    max-width: 50%;
     padding: 70px;
     margin-left: 30px; }
-    .country__flag img {
+    .country__image__flag {
       width: 100%; }
   .country__info {
     display: flex;

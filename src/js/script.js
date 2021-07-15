@@ -61,51 +61,19 @@ function createCard (country) {
 }
 
 function aboutCountry (country) {
+  $(".countries").addClass("hide")
+  $('.country').removeClass('hide')
 
-  let countries = $(".countries")
-  countries.css("display", "none")
-  let countryFlag = $(".country__flag")
-  let countryData = $(".country__info")
-  let countryDataLeft = $(".country__info__data__left")
-  let countryDataRight = $(".country__info__data__right")
-
-  const flag = $('<img />');
-  flag.attr('src', country.flag);
-  countryFlag.append(flag)
-
-  const name = $('<h2></h2>');
-  name.addClass('countries__cards__card__name');
-  name.text(country.name);
-
-  const nativeName = $('<p></p>');
-  nativeName.html('<span>Native name: </span>' + country.nativeName);
-
-  const population = $('<p></p>');
-  population.html('<span>Population: </span>' + country.population);
-
-  const region = $('<p></p>');
-  region.html('<span>Region: </span>' + country.region);
-
-  const subRegion = $('<p></p>');
-  subRegion.html('<span>Sub Region: </span>' + country.subregion);
-
-  const capital = $('<p></p>');
-  capital.html('<span>Capital: </span>' + country.capital);
-
-  const topLevelDomain = $('<p></p>');
-  topLevelDomain.html('<span>Top Level Domain: </span>' + country.topLevelDomain);
-
-  const currencies = $('<p></p>');
-  currencies.html('<span>Currencies: </span>' + country.currencies.map(currency =>currency.name).join(", "));
-
-  const languages = $('<p></p>');
-  languages.html('<span>Languages: </span>' + country.languages.map(language =>language.name).join(", "));
-
-  countryData.prepend(name)
-  countryDataLeft.append(nativeName, population, region, subRegion, capital)
-  countryDataRight.append(topLevelDomain, currencies, languages)
-
-  console.log(country)
+  $('.country__image__flag').attr('src', country.flag);
+  $('.country__name').text(country.name);
+  $('.coutry__native-name').html('<span>Native name: </span>' + country.nativeName);
+  $('.country__population').html('<span>Population: </span>' + country.population);
+  $('.country__region').html('<span>Region: </span>' + country.region);
+  $('.country__subregion').html('<span>Sub Region: </span>' + country.subregion);
+  $('.country__capital').html('<span>Capital: </span>' + country.capital);
+  $('.country__domain').html('<span>Top Level Domain: </span>' + country.topLevelDomain);
+  $('.country__currencies').html('<span>Currencies: </span>' + country.currencies.map(currency =>currency.name).join(", "));
+  $('.country__language').html('<span>Languages: </span>' + country.languages.map(language =>language.name).join(", "));
 }
 
 $(".countries__search__wrapper__input").on('keyup', (event) => {
@@ -117,3 +85,9 @@ $(".countries__search__wrapper__input").on('keyup', (event) => {
     }
   })
 })
+
+$('.country__button').on('click', () => {
+  $('.countries').toggleClass('hide')
+  $('.country').toggleClass('hide')
+})
+

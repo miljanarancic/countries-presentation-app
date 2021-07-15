@@ -7,6 +7,10 @@
   background-color: var(--page-background);
   color: var(--font-color);
 
+  &.hide {
+    display: none;
+  }
+
   @include tablet {
     padding: 40px;
   }
