@@ -49,6 +49,7 @@ function createCard (country) {
   population.html('<span>Population: </span>' + country.population);
 
   const region = $('<p></p>');
+  region.addClass("countries__cards__card__region")
   region.html('<span>Region: </span>' + country.region);
 
   const capital = $('<p></p>');
@@ -66,19 +67,30 @@ function aboutCountry (country) {
 
   $('.country__image__flag').attr('src', country.flag);
   $('.country__name').text(country.name);
-  $('.coutry__native-name').html('<span>Native name: </span>' + country.nativeName);
+  $('.country__native-name').html('<span>Native name: </span>' + country.nativeName);
   $('.country__population').html('<span>Population: </span>' + country.population);
   $('.country__region').html('<span>Region: </span>' + country.region);
   $('.country__subregion').html('<span>Sub Region: </span>' + country.subregion);
   $('.country__capital').html('<span>Capital: </span>' + country.capital);
   $('.country__domain').html('<span>Top Level Domain: </span>' + country.topLevelDomain);
-  $('.country__currencies').html('<span>Currencies: </span>' + country.currencies.map(currency =>currency.name).join(", "));
-  $('.country__language').html('<span>Languages: </span>' + country.languages.map(language =>language.name).join(", "));
+  $('.country__currencies').html('<span>Currencies: </span>' + country.currencies.map(currency => currency.name).join(", "));
+  $('.country__languages').html('<span>Languages: </span>' + country.languages.map(language => language.name).join(", "));
+console.log(country)
 }
 
 $(".countries__search__wrapper__input").on('keyup', (event) => {
   $(".countries__cards__card").each(function(){
     if($(this).find('.countries__cards__card__name').text().toLowerCase().startsWith(event.target.value.toLowerCase())) {
+      $(this).css('display', 'flex')
+    } else {
+      $(this).css('display', 'none')
+    }
+  })
+})
+
+$(".countries__search__dropdown").on('change', (event) => {
+  $(".countries__cards__card").each(function(){
+    if($(this).find('.countries__cards__card__region').text().includes(event.target.value)) {
       $(this).css('display', 'flex')
     } else {
       $(this).css('display', 'none')

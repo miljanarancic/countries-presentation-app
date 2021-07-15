@@ -151,6 +151,9 @@ body {
   color: var(--font-color); }
   .country.hide {
     display: none; }
+  .country__name {
+    font-weight: 800;
+    font-family: "Nunito Sans", sans-serif; }
   .country__button {
     width: 100px;
     padding: 5px;
@@ -161,14 +164,25 @@ body {
     color: var(--font-color);
     border-radius: 5px; }
   .country__image {
-    max-width: 50%;
-    padding: 70px;
-    margin-left: 30px; }
+    max-width: 40%;
+    padding: 70px 0 0 30px;
+    margin-left: 70px; }
     .country__image__flag {
       width: 100%; }
   .country__info {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    width: 50%;
+    padding-top: 120px;
+    margin-left: 100px;
+    margin-right: 80px; }
     .country__info__data {
       display: flex;
-      padding-top: 80px; }
+      justify-content: space-between;
+      font-family: "Nunito Sans", sans-serif; }
+      .country__info__data__left, .country__info__data__right {
+        flex: 0 0 50%; }
+        .country__info__data__left span, .country__info__data__right span {
+          font-weight: 800; }
+        .country__info__data__left p, .country__info__data__right p {
+          margin: 10px 0; }
