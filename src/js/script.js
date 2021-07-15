@@ -43,6 +43,7 @@ function createCard (country) {
 
   const flag = $('<img />');
   flag.attr('src', country.flag);
+  flag.attr('alt', "flag")
 
   const name = $('<h2></h2>');
   name.addClass('countries__cards__card__name');
