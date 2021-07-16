@@ -117,6 +117,8 @@ body {
       margin: 30px;
       box-shadow: 0px 0px 6px 0px var(--box-shadow-color);
       background-color: var(--primary-background); }
+      .countries__cards__card.hidden {
+        display: none; }
       @media (max-width: 1024px) {
         .countries__cards__card {
           width: calc(33% - 60px); } }
