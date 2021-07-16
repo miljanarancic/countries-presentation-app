@@ -45,7 +45,7 @@ function createCard (country) {
   flag.attr('src', country.flag);
   flag.attr('alt', "flag")
 
-  const name = $('<h2></h2>');
+  const name = $('<span></span>');
   name.addClass('countries__cards__card__name');
   name.text(country.name);
 
