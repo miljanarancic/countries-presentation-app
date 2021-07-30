@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+  .countries {
+    padding: 40px;
+
+    &__search {
+      flex-direction: column;
+      align-items: flex-start;
+
+      &__dropdown {
+        margin-top: 20px;
+      }
+    }
+    &__cards__card {
+      width: calc(50% - 30px);
+    }
+  }
+  .country {
+    &__button {
+      margin-left: 10%;
+    }
+  }
+}

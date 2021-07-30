@@ -1,0 +1,31 @@
+@media (max-width: 425px) {
+  .header__navigation__heading {
+    font-size: 16px;
+  }
+  .countires {
+    padding: 20px 10px;
+
+    &__search {
+      &__dropdown {
+        margin-top: 30px;
+      }
+      &__wrapper__input {
+        width: 300px;
+      }
+    }
+
+    &__cards {
+      padding: 0 20px;
+    }
+  }
+
+  .country {
+    &__info {
+      align-items: flex-start;
+
+      &__data {
+        flex-direction: column;
+      }
+    }
+  }
+}

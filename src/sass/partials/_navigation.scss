@@ -12,23 +12,11 @@
     width: 100%;
     padding: 0 80px;
 
-    @media (max-width: 570px) {
-      padding: 20px;
-    }
-
     &__heading {
       font-family: $font-nunito;
       font-weight: 800;
       font-size: 24px;
       padding: 0;
-
-      @media (max-width: 570px) {
-        font-size: 18px;
-      }
-
-      @include mobile-l {
-        font-size: 16px;
-      }
     }
   }
 }

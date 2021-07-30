@@ -40,7 +40,7 @@ function createCard (country) {
 
   const cardData = $('<div></div>');
   cardData.addClass('countries__cards__card__data');
-
+  
   const flag = $('<img />');
   flag.attr('src', country.flag);
   flag.attr('alt', "flag")
@@ -96,10 +96,8 @@ function aboutCountry (country) {
 $('.countries__search__wrapper__input').on('keyup', (event) => {
   $('.countries__cards__card').each(function(){
     if($(this).find('.countries__cards__card__name').text().toLowerCase().startsWith(event.target.value.toLowerCase())) {
-      //$(this).css('display', 'flex')
       $(this).removeClass("hidden")
     } else {
-      //$(this).css('display', 'none')
       $(this).addClass("hidden")
     }
   })
@@ -108,10 +106,8 @@ $('.countries__search__wrapper__input').on('keyup', (event) => {
 $('.countries__search__dropdown').on('change', (event) => {
   $('.countries__cards__card').each(function(){
     if($(this).find('.countries__cards__card__region').text().includes(event.target.value)) {
-      //$(this).css('display', 'flex')
       $(this).removeClass("hidden")
     } else {
-     // $(this).css('display', 'none')
       $(this).addClass("hidden")
     }
   })

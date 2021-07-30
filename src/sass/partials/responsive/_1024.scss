@@ -1,0 +1,12 @@
+@media (max-width: 1024px) {
+  .countries__cards__card {
+    width: calc(33% - 60px);
+  }
+  .country__info {
+    padding-top: 50px;
+
+    &__data__left {
+      margin-right: 20px;
+    }
+  }
+}
